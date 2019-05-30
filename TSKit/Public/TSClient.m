@@ -158,10 +158,10 @@
     }
 
     // Pull out all the IDs for users
-    UInt64 *userIDs = calloc(users.count + 1, sizeof(anyID));
+    anyID *userIDs = calloc(users.count + 1, sizeof(anyID));
     for (NSUInteger u = 0; u < users.count; u++) {
         userIDs[u] = users[u].uid;
-        NSLog(@" WhisperList add user with ID: %llu:\n", (const unsigned short) users[u].uid);
+        NSLog(@" WhisperList add user with ID: %us:\n", (const unsigned short) users[u].uid);
     }
 
     NSString *returnCode = [[NSUUID UUID] UUIDString];
@@ -184,12 +184,12 @@
     free(userIDs);
 }
 
-- (void)allowWisperFrom:(TSUser*) user {
+- (void)allowWhisperFrom:(TSUser*) user {
     NSLog(@"WhisperList: allow Whispers from %@", user.name);
     ts3client_allowWhispersFrom(_serverConnectionHandlerID, user.uid);
 }
 
-- (void)removeWisperFrom:(TSUser*) user {
+- (void)removeWhisperFrom:(TSUser*) user {
     NSLog(@"WhisperList: remove Whispers from %@", user.name);
     ts3client_removeFromAllowedWhispersFrom(_serverConnectionHandlerID, user.uid);
 }

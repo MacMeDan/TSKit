@@ -12,9 +12,9 @@
 @property (nonatomic, copy, nonnull) NSString *name;
 @property (nonatomic, assign, getter=isMuted) BOOL muted;
 
-- (instancetype)initWithUid:(uint64_t)uid name:(NSString *)name muted:(BOOL) muted;
+- (instancetype _Nullable )initWithUid:(uint64_t)uid name:(NSString *_Nullable)name muted:(BOOL) muted;
 
-+ (instancetype)userWithUid:(uint64_t)uid name:(NSString *)name muted:(BOOL) muted;
++ (instancetype _Nullable )userWithUid:(uint64_t)uid name:(NSString *_Nullable)name muted:(BOOL) muted;
 
 
 @end

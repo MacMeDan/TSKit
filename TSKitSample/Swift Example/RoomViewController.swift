@@ -138,14 +138,14 @@ extension RoomViewController: UITableViewDelegate {
         }
         alert.addAction(joinChannelAction)
 
-        let addToWisperListAction = UIAlertAction(title: "Add users of channel to WisperList", style: .default) { _ in
+        let addToWhisperListAction = UIAlertAction(title: "Add users of channel to WhisperList", style: .default) { _ in
             let users = try! self.client.listUsers(in: channel)
-            // Optionally you could just wisper to individual `TSUsers` or to an individual `TSChannel`
+            // Optionally you could just Whisper to individual `TSUsers` or to an individual `TSChannel`
             self.client.requestSetWhisperList(users, channels: [channel])
             self.navigationController?.pushViewController(destination, animated: true)
         }
 
-        alert.addAction(addToWisperListAction)
+        alert.addAction(addToWhisperListAction)
 
         self.navigationController?.present(alert, animated: true, completion: nil)
     }

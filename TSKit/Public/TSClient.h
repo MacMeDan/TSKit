@@ -92,19 +92,19 @@ typedef void (^TSClientAuthPrompt)(TSClientAuthCallback authCallback);
 -(void)requestClientSetWhisperList:(nullable NSArray<TSUser *>*)users channels:(nullable NSArray<TSChannel *>*)channels;
 
 /**
- Adds a `TSUser` to the wisper list. Allowing the current user to recive audio from the added User.
+ Adds a `TSUser` to the Whisper list. Allowing the current user to recive audio from the added User.
 
  @param user `TSUser`
  */
--(void)allowWisperFrom:(TSUser*) user;
+-(void)allowWhisperFrom:(TSUser*) user;
 
 
 /**
- Removes a `TSUser` to the wisper list. Disallowing the current user from receiving audio from this user.
+ Removes a `TSUser` to the Whisper list. Disallowing the current user from receiving audio from this user.
 
  @param user `TSUser`
  */
--(void)removeWisperFrom:(TSUser*) user;
+-(void)removeWhisperFrom:(TSUser*) user;
 
 - (NSArray<TSChannel *> *)listChannels;
 
